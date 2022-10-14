@@ -34,6 +34,8 @@ const handleSubmit=(e)=>{
 }
 
 function deleteItem(id){
+  if(todo.length==1)
+   localStorage.setItem(Local_Storage_Key,JSON.stringify(todos));
   setTodos(todos.filter((todo)=>id!=todo.id))
 }
 
@@ -42,7 +44,7 @@ const[todosinp,setTodoInp]=useState("");
   return (
     <div className='list-container'>
       <div className='todo-input-form'>
-      <input type="text" onChange={handleInput} placeholder='Add a todo'/>
+      <input type="text" onChange={handleInput} placeholder='Add a todo' value={todosinp}/>
             <button onClick={handleSubmit}>Add Todo</button>
             </div>
       {/* dynamic rendering - data driven rendering */}
