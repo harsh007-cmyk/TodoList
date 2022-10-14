@@ -30,7 +30,8 @@ useEffect(()=>{
 
 
 const handleSubmit=(e)=>{
-  setTodos([{id:Math.random()*1000,text:todosinp},...todos])
+  setTodos([{id:Math.random()*1000,text:todosinp},...todos]);
+  setTodoInp("");
 }
 
 function deleteItem(id){
